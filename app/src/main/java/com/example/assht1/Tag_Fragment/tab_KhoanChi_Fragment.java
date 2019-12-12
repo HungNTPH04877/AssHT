@@ -18,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.assht1.Adapter.NoiDungKhoangChi_Adapter;
+import com.example.assht1.DAO.KhoanChiDAO;
+import com.example.assht1.DAO.LoaiChiDao;
 import com.example.assht1.Model.KhoanChi;
 import com.example.assht1.Model.LoaiChi;
 import com.example.assht1.R;
@@ -33,6 +35,8 @@ import androidx.fragment.app.Fragment;
 
 public class tab_KhoanChi_Fragment extends Fragment {
     Database database;
+    LoaiChiDao loaiChiDao;
+    KhoanChiDAO khoanChiDAO;
     NoiDungKhoangChi_Adapter adapter;
     List<KhoanChi> khoanChiList;
     ListView lvKhoanChi;
@@ -72,8 +76,8 @@ public class tab_KhoanChi_Fragment extends Fragment {
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.show();
         // lấy dữ liệu Spiner
-        database = new Database(getActivity());
-        loaiChiList = database.getDataLC();
+        loaiChiDao = new LoaiChiDao(getActivity());
+        loaiChiList = loaiChiDao.getDataLC();
         spLoaiChi = (Spinner) dialog.findViewById(R.id.spLoaiChi);
 
         ArrayAdapter<LoaiChi> adapterLoaiChi = new ArrayAdapter<LoaiChi>(
@@ -130,7 +134,7 @@ public class tab_KhoanChi_Fragment extends Fragment {
                 final KhoanChi khoanChi = new KhoanChi(maKC, tenKC, theLoai, nGay);
 
                 khoanChiList.add(khoanChi);
-                if (database.addDataKC(khoanChi) > 0) {
+                if (khoanChiDAO.addDataKC(khoanChi) > 0) {
                     if (khoanChi.getMaKC().toString().equals("") &&
                             khoanChi.getTenKC().toString().equals("") &&
                             khoanChi.getNgay().toString().equals("") &&
@@ -151,8 +155,8 @@ public class tab_KhoanChi_Fragment extends Fragment {
     }
 
     public void getDataList(ListView lv) {
-        database = new Database(getActivity());
-        adapter = new NoiDungKhoangChi_Adapter(database.getDataKC(), this, R.layout.item_khoanchi_fragment, lv);
+        khoanChiDAO = new KhoanChiDAO(getActivity());
+        adapter = new NoiDungKhoangChi_Adapter(khoanChiDAO.getDataKC(), this, R.layout.item_khoanchi_fragment, lv);
         lv.setAdapter(adapter);
     }
 }

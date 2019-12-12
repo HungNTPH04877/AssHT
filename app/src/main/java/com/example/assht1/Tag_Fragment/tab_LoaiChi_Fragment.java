@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.assht1.Adapter.NoiDungLoaiChi_Adapter;
+import com.example.assht1.DAO.LoaiChiDao;
 import com.example.assht1.Model.LoaiChi;
 import com.example.assht1.R;
 import com.example.assht1.database.Database;
@@ -29,6 +30,7 @@ public class tab_LoaiChi_Fragment extends Fragment {
     public static List<LoaiChi> arrayList = new ArrayList<>();
     public static NoiDungLoaiChi_Adapter adapter;
     Database database;
+    LoaiChiDao loaiChiDao;
     private ListView listView;
     FloatingActionButton fab;
 
@@ -55,6 +57,7 @@ public class tab_LoaiChi_Fragment extends Fragment {
     public void dialogThem(final ListView lv) {
         final Dialog dialog = new Dialog(getActivity());
         database = new Database(getContext());
+        loaiChiDao = new LoaiChiDao(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_them_loaichi);
 
@@ -90,7 +93,7 @@ public class tab_LoaiChi_Fragment extends Fragment {
                 LoaiChi lc = new LoaiChi(maLC,tenLC);
                 //id, mã,ten, the loai, ngay
                 arrayList.add(lc);
-                if (database.addDataLC(lc) >0) {
+                if (loaiChiDao.addDataLC(lc) >0) {
                     if (lc.getMaLC().toString().equals("") &&
                             lc.getTenLC().toString().equals("")) {
                         Toast.makeText(getActivity(), "Empty data!!", Toast.LENGTH_SHORT).show();
@@ -108,8 +111,8 @@ public class tab_LoaiChi_Fragment extends Fragment {
     }
 
     public void getDataList(ListView lv) {
-        database = new Database(getActivity());
-        adapter = new NoiDungLoaiChi_Adapter(database.getDataLC(), this, R.layout.item_loaichi_fragment, lv);
+        loaiChiDao = new LoaiChiDao(getActivity());
+        adapter = new NoiDungLoaiChi_Adapter(loaiChiDao.getDataLC(), this, R.layout.item_loaichi_fragment, lv);
         lv.setAdapter(adapter);
     }
 }

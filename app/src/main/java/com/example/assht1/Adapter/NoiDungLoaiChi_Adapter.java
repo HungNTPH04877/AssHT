@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.assht1.DAO.LoaiChiDao;
 import com.example.assht1.Model.LoaiChi;
 import com.example.assht1.R;
 import com.example.assht1.Tag_Fragment.tab_LoaiChi_Fragment;
@@ -31,6 +32,7 @@ public class NoiDungLoaiChi_Adapter extends BaseAdapter {
     private ListView mListView;
     EditText txtNhapNgay;
     Database db;
+    LoaiChiDao loaiChiDao;
 
     public NoiDungLoaiChi_Adapter(List<LoaiChi> loaiChiList, tab_LoaiChi_Fragment context, int layout, ListView lv) {
         this.loaiChiList = loaiChiList;
@@ -121,6 +123,7 @@ public class NoiDungLoaiChi_Adapter extends BaseAdapter {
                 txtMaLC.setText(loaiChi.getMaLC());
                 txtTenLC.setText(loaiChi.getTenLC());
                 Button btnHuy = dialog.findViewById(R.id.btnHuyUpdate);
+                //btn Huy
                 btnHuy.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

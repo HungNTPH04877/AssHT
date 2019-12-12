@@ -39,9 +39,6 @@ public class LoaiChi {
 
     @Override
     public String toString() {
-        return "LoaiChi{" +
-                ", MaLC='" + MaLC + '\'' +
-                ", TenLC='" + TenLC + '\'' +
-                '}';
+        return this.MaLC +"-----"+ this.TenLC;
     }
 }
