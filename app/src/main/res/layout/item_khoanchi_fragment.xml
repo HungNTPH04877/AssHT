@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:padding="5dp"
+                android:text="Mã LC:"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvMaKC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/txtTheLoai"
+                android:layout_toRightOf="@+id/txtTheLoai"
+                android:padding="5dp"
+                android:text="Mã LC"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:padding="5dp"
+                android:text="Tên LC:"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvTenKC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:text="Tên LC"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:padding="5dp"
+                android:text="Thể Loại:"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvTheLoai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtNgay"
+                android:padding="5dp"
+                android:text="Thể Loai"
+                android:textSize="16dp"
+                android:layout_alignParentLeft="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:padding="5dp"
+                android:text="Ngày:"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tvNgay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtMaKhoanChi"
+                android:layout_alignEnd="@+id/txtMaKhoanChi"
+                android:padding="5dp"
+                android:text="Ngày"
+                android:textSize="16dp"
+                android:layout_alignRight="@+id/txtMaKhoanChi" />
+        </LinearLayout>
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_marginBottom="10dp"
+                android:id="@+id/btnEditKhoanChi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Sửa"
+                android:background="#4CAF50"
+                android:textSize="12sp"/>
+            <Button
+                android:id="@+id/btnDeleteKhoanChi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Xoá"
+                android:background="#F44336"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+</LinearLayout>

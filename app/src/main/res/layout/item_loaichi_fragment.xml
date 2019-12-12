@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvMaLC"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="MaLC"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvTenLC"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="MaLC"
+        android:textSize="16sp" />
+    <Button
+        android:id="@+id/btnEditLoaiChi"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="Sua"
+        android:background="#4CAF50"/>
+
+    <Button
+        android:layout_marginLeft="10dp"
+        android:id="@+id/btnDeleteLoaiChi"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="Xoa"
+        android:background="#F44336"/>
+
+</LinearLayout>
